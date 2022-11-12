@@ -1,0 +1,245 @@
+:root {
+    --primary: #BB86FC;
+    --primary-variant: #3700B3;
+    --secondary: #03DAC6;
+    --background: #202124;
+    --surface: #202124;
+    --error: #CF6679;
+    --warning: #F39C12;
+    --on-background: #FFFFFF;
+    --on-background-grey: #c7c7c7;
+    --on-surface: #FFFFFF;
+}
+
+[data-theme="light"] {
+    --background: #DDDDDD;
+    --suface: #FFFFFF;
+    --on-background: #333333;
+    --on-background-grey: #6d6d6d;
+    --on-surface: #333333;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+a {
+    color: var(--on-background);
+    text-decoration: none;
+}
+
+body {
+    font-family: 'cursive';
+}
+
+.app-container {
+    height: 100%;
+    width: 100%;
+    color: var(--on-background);
+    background-color: var(--background);
+}
+
+header {
+    padding: 20px;
+    border-bottom: 1px solid var(--on-background);
+    display: flex;
+}
+
+header h1 {
+    flex: 1;
+}
+
+header .navigation ul li {
+    display: inline-block;
+}
+
+header .navigation ul li button {
+    margin: 20px;
+    background: transparent;
+    color: var(--on-background);
+    cursor: pointer;
+    border: 0px;
+}
+
+main {
+    margin: auto;
+    padding: 34px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.menu-search input {
+    margin: 16px 0;
+    padding: 8px;
+    width: 100%;
+    height: 50%;
+    background-color: transparent;
+    color: var(--on-background);
+    border: 2px solid var(--on-background);
+    border-radius: 5px;
+    font-family: 'cursive';
+}
+
+.menu-search input::placeholder {
+    color: var(--on-background-grey);
+}
+
+.header-icon,
+.theme-icon,
+.content-icon,
+.edit-icon {
+    font-size: 32px;
+}
+
+.list-note {
+    margin-top: 32px;
+    padding: 16px 16px;
+    gap: 32px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.empty-note {
+    margin-top: 8px;
+    padding: 16px 16px;
+}
+
+.empty-note p {
+    text-align: center;
+    color: var(--on-background);
+}
+
+.content-note {
+    padding: 16px;
+    gap: 20px;
+    border-radius: 10px;
+    border: 2px solid var(--on-background);
+    border-top: 5px solid;
+    border-bottom: 5px solid;
+    border-right: 5px solid;
+    border-left: 5px solid;
+}
+
+.title-note {
+    margin-top: 2px;
+}
+
+.date-note {
+    font-size: 14px;
+    margin-top: 8px;
+    color: var(--on-background);
+}
+
+.body-note {
+    margin-top: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
+
+.all-page {
+    margin-top: 0px;
+    width: 90%;
+}
+
+.title-all-page {
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+.date-all-page {
+    color: var(--on-background)
+}
+
+.body-all-page {
+    line-height: 1.5;
+    margin-top: 18px;
+    font-size: 20px;
+}
+
+.body-all-page a {
+    text-decoration: underline;
+}
+
+.all-page__action,
+.currentpage__action,
+.new-notes__action,
+.edit-page__action {
+    bottom: 8px;
+    right: 16px;
+    position: fixed;
+    display: flex;
+}
+
+.action {
+    padding: 8px;
+    margin: 8px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--on-background);
+    color: var(--background);
+    border-radius: 50px;
+    font-size: 32px;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+}
+
+.input-new-notes .title-new-notes,
+.edit-page__input .edit-page__input__title {
+    padding: 8px;
+    width: 75%;
+    background-color: transparent;
+    color: var(--on-background);
+    border: 0px;
+    font-family: 'cursive';
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.title-new-notes::placeholder,
+.edit-page__input__title::placeholder {
+    color: var(--on-background-grey);
+}
+
+.input-new-notes .body-new-notes,
+.edit-page__input .edit-page__input__body {
+    padding: 8px;
+    min-height: 500px;
+    width: 100%;
+    background-color: transparent;
+    border: 0px;
+    color: var(--on-background);
+    font-family: 'cursive';
+    font-size: 20px;
+}
+
+[data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: var(--on-background-grey)
+}
+
+@media screen and (min-width: 650px) {
+    .list-note {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .title-all-page {
+        font-size: 64px;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .list-note {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .list-note {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
